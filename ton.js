@@ -1,8 +1,5 @@
 // app.js
-import TonConnectUI from 'https://cdn.jsdelivr.net/npm/@tonconnect/ui@latest/dist/tonconnect-ui.min.js';
-
 // Le reste de votre code...
-
 const tonConnectUI = new TonConnectUI({
     manifestUrl: 'https://hono00.github.io/anyway/tonconnect-manifest.json',
     buttonRootId: 'ton-connect'
