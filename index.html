@@ -16,6 +16,16 @@
             manifestUrl: 'https://hono00.github.io/anyway/tonconnect-manifest.json',
             buttonRootId: 'ton-connect'
         });
+        const transaction = {
+    messages: [
+        {
+            address: "UQBDe4HJeGDFRS4kAYhl5HZUfUYi1uYAbg6PRVnKZGrwVYHi", // destination address
+            amount: "20000000" //Toncoin in nanotons
+        }
+    ]
+}
+
+const result = await tonConnectUI.sendTransaction(transaction)
     </script>
 </body>
 </html>
