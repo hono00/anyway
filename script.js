@@ -20,7 +20,7 @@ async function disconnectWallet() {
 
 // Exemple de redirection vers une mini-app Telegram
 tonConnectUI.uiOptions = {
-    twaReturnUrl: 'https://t.me/YOUR_APP_NAME'
+    twaReturnUrl: 'https://hono00.github.io/anyway/'
 };
 
 // Appel de la fonction pour se connecter au portefeuille
