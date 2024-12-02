@@ -1,11 +1,3 @@
-// app.js
-import * as TonConnectUI from 'https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js';
-// Le reste de votre code...
-const tonConnectUI = new TonConnectUI({
-    manifestUrl: 'https://hono00.github.io/anyway/tonconnect-manifest.json',
-    buttonRootId: 'ton-connect'
-});
-
 async function sendTransaction() {
     const transaction = {
         messages: [
