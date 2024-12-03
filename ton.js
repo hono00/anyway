@@ -1,10 +1,12 @@
-if (!tonConnectUI.connected) {
-    alert('Please connect wallet to send the transaction!');
-}
-
 // Fonction pour envoyer une transaction
 
 async function sendTransaction() {
+
+    if (!tonConnectUI.connected) {
+        alert('Please connect wallet to send the transaction!');
+        await tonConnectUI.connectWallet();
+        
+    }
 
     const transaction = {
 
