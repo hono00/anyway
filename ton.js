@@ -18,16 +18,10 @@ async function sendTransaction() {
     console.log (tonConnectUI);
 }
 
-async function ConnectAndSendTransaction() {
-    try {
-        await sendTransaction();
-    } catch (error) {
-        console.error("Erreur lors de l'envoi de la transaction, portefeuille non connecté :", error);
-    }
-}
+
 
 // Attacher le gestionnaire d'événements pour le bouton d'envoi de transaction
 document.addEventListener('DOMContentLoaded', () => {
     const sendTransactionButton = document.getElementById('send-transaction-button');
-    sendTransactionButton.addEventListener('click', ConnectAndSendTransaction);
+    sendTransactionButton.addEventListener('click', sendTransaction);
 });
