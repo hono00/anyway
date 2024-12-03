@@ -19,12 +19,11 @@ async function sendTransaction() {
 
 async function ConnectandsendTransaction() {
     try {
-        const tryiii = prompt("okay 👍 :", transaction);
         await sendTransaction();
     } catch (error) {
         console.error(error);
-        const errr = prompt("ok:", error);
-        await tonConnectUI.connectWallet();
+        const connectedWallet = await tonConnectUI.connectWallet();
+        const wall = prompt (connectedWallet);
     }
     
 }
