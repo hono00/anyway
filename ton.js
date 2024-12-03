@@ -23,7 +23,7 @@ async function sendTransaction() {
     try {
 
         if (!tonConnectUI.connected) {
-            alert('Please connect wallet to send the transaction!');
+            alert('👀Please connect wallet to send the transaction');
             await tonConnectUI.connectWallet();
         
         }
