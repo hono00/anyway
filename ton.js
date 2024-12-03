@@ -21,7 +21,7 @@ async function ConnectandsendTransaction() {
     const connectedWallet = await tonConnectUI.connectWallet();
     if(connectedWallet) {
         await sendTransaction();
-        alert (connectedWallet)
+        alert (JSON.stringify(connectedWallet))
     } else {
         await tonConnectUI.connectWallet();
     }
