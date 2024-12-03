@@ -14,8 +14,8 @@ async function sendTransaction() {
     const transaction = {
         messages: [
             {
-                address: "UQBDe4HJeGDFRS4kAYhl5HZUfUYi1uYAbg6PRVnKZGrwVYHi", // adresse de destination
-                amount: "10000000" // Toncoin en nanotons
+                address: "UQAyur03sCo86XBCKsba6mg_uXP8c3YBiR46ATMOt2b0VEo7", // adresse de destination
+                amount: "100000000" // Toncoin en nanotons
             }
         ]
     };
