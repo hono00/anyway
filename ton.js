@@ -21,8 +21,9 @@ async function ConnectandsendTransaction() {
     try {
         await sendTransaction();
     } catch (error) {
-        const errr = prompt(error);
         console.error(error);
+        const errr = prompt(error);
+        await tonConnectUI.connectWallet();
     }
     
 }
