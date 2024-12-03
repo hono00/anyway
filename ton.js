@@ -21,7 +21,8 @@ async function ConnectandsendTransaction() {
     try {
         await sendTransaction();
     } catch (error) {
-        alert("E: " +error.message);
+        console.error(error)
+        alert(error.message);
     }
     
 }
