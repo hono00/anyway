@@ -21,7 +21,10 @@ async function ConnectandsendTransaction() {
     try {
         await sendTransaction();
     } catch (error) {
-        await tonConnectUI.connectWallet();
+        console.error(error);
+        if (error){
+            await tonConnectUI.connectWallet();
+        }
     }
     
 }
