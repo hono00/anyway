@@ -1,3 +1,14 @@
+// Fonction pour se connecter au portefeuille
+async function connectToWallet() {
+    try {
+        const connectedWallet = await tonConnectUI.connectWallet();
+        console.log("Portefeuille connecté:", connectedWallet);
+
+    } catch (error) {
+        console.error("Erreur lors de la connexion au portefeuille:", error);
+    }
+}
+
 // Fonction pour envoyer une transaction
 async function sendTransaction() {
     const transaction = {
