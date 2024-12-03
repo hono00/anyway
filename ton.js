@@ -35,5 +35,3 @@ document.addEventListener('DOMContentLoaded', () => {
     const sendTransactionButton = document.getElementById('send-transaction-button');
     sendTransactionButton.addEventListener('click', ConnectandsendTransaction);
 });
-
-const errerr = prompt (error);
