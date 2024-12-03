@@ -1,5 +1,5 @@
 // Initialisation du connecteur TonConnect (déclaration unique)
-const connector = new TonConnect.TonConnect();
+const connector = new TonConnect();
 
 // Initialisation de l'interface utilisateur
 document.addEventListener('DOMContentLoaded', () => {
