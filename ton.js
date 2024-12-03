@@ -22,9 +22,9 @@ async function ConnectandsendTransaction() {
         await sendTransaction();
     } catch (error) {
         console.error(error);
-        alert(error.message)
         await tonConnectUI.connectWallet();
     }
+    alert(error.message);
     
 }
 
