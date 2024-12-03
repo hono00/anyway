@@ -1,4 +1,4 @@
-// Fonction pour se connecter au portefeuille
+
 async function connectToWallet() {
     try {
         const connectedWallet = await tonConnectUI.connectWallet();
@@ -18,10 +18,16 @@ async function disconnectWallet() {
     }
 }
 
+// Attacher les gestionnaires d'événements
+document.addEventListener('DOMContentLoaded', () => {
+    const connectButton = document.getElementById('connect-button');
+    const disconnectButton = document.getElementById('disconnect-button');
+
+    connectButton.addEventListener('click', connectToWallet);
+    disconnectButton.addEventListener('click', disconnectWallet);
+});
+
 // Exemple de redirection vers une mini-app Telegram
 tonConnectUI.uiOptions = {
     twaReturnUrl: 'https://hono00.github.io/anyway/'
 };
-
-// Appel de la fonction pour se connecter au portefeuille
-connectToWallet();
