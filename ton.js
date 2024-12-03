@@ -15,6 +15,7 @@ async function sendTransaction() {
     } catch (error) {
         console.error("Transaction échouée :", error);
     }
+    console.log (tonConnectUI);
 }
 
 async function ConnectAndSendTransaction() {
