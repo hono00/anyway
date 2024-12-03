@@ -19,6 +19,7 @@ async function sendTransaction() {
 
 async function ConnectandsendTransaction() {
     try {
+        const tryiii = prompt("okay 👍 :", transaction);
         await sendTransaction();
     } catch (error) {
         console.error(error);
