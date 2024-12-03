@@ -33,3 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Ajouter un événement de connexion
     connectButton.addEventListener('click', connectToWallet);
 });
+
+
+module.exports = {connectToWallet};
