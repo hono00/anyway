@@ -21,7 +21,7 @@ async function ConnectAndSendTransaction() {
     try {
         await sendTransaction();
     } catch (error) {
-        console.error("Erreur lors de la connexion ou de l'envoi de la transaction :", error);
+        console.error("Erreur lors de l'envoi de la transaction, portefeuille non connecté :", error);
     }
 }
 
