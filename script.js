@@ -1,5 +1,5 @@
 // Fonction pour se connecter au portefeuille
-export async function connectToWallet() {
+async function connectToWallet() {
     try {
         const connectedWallet = await tonConnectUI.connectWallet();
         console.log("Portefeuille connecté:", connectedWallet);
