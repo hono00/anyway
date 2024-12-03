@@ -18,15 +18,11 @@ async function sendTransaction() {
 }
 
 async function ConnectandsendTransaction() {
-    try {
+    const connectedWallet = await tonConnectUI.connectWallet();
+    if(connectedWallet) {
         await sendTransaction();
-    } catch (error) {
-        console.error("Transaction failed:", error);
-        try {
-            await tonConnectUI.connectWallet();
-        } catch (walletError) {
-            console.error("Wallet connection failed:", walletError);
-        }
+    } else {
+        await tonConnectUI.connectWallet();
     }
 }
 
