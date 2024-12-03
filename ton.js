@@ -1,4 +1,13 @@
-import {connectToWallet} from 'script.js'
+// Importer la fonction de connexion au portefeuille depuis script.js
+import { connectToWallet } from 'script.js';
+
+// Appeler la fonction pour connecter le portefeuille
+async function init() {
+    await connectToWallet();
+    console.log("Initialisation terminée.");
+}
+
+init();
 // Fonction pour envoyer une transaction
 async function sendTransaction() {
     const transaction = {
