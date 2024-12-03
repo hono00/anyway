@@ -29,7 +29,6 @@ tonConnectUI.uiOptions = {
 
 // Attacher les gestionnaires d'événements après le chargement du DOM
 document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('send-transaction-button').disabled = true;
     const connectButton = document.getElementById('ton-connect');
     
     // Ajouter un événement de connexion
