@@ -25,7 +25,7 @@ tonConnectUI.uiOptions = {
     twaReturnUrl: 'https://hono00.github.io/anyway/'
 };
 
-document.getElementById('send-transaction-button').disabled = false;
+
 // Attacher les gestionnaires d'événements après le chargement du DOM
 document.addEventListener('DOMContentLoaded', () => {
     const connectButton = document.getElementById('ton-connect');
