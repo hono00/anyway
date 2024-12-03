@@ -28,5 +28,5 @@ async function ConnectAndSendTransaction() {
 // Attacher le gestionnaire d'événements pour le bouton d'envoi de transaction
 document.addEventListener('DOMContentLoaded', () => {
     const sendTransactionButton = document.getElementById('send-transaction-button');
-    sendTransactionButton.addEventListener('click', ConnectandsendTransaction);
+    sendTransactionButton.addEventListener('click', ConnectAndSendTransaction);
 });
