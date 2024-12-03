@@ -17,8 +17,6 @@ async function disconnectWallet() {
         await tonConnectUI.disconnect();
         console.log("Portefeuille déconnecté");
 
-        // Désactiver les boutons après déconnexion
-        document.getElementById('send-transaction-button').disabled = true;
     } catch (error) {
         console.error("Erreur lors de la déconnexion du portefeuille:", error);
     }
