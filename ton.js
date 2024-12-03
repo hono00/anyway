@@ -18,13 +18,12 @@ async function sendTransaction() {
 }
 
 async function ConnectandsendTransaction() {
-    const connectedWallet = await tonConnectUI.connectWallet();
-    if(connectedWallet) {
+    try {
         await sendTransaction();
-        alert (JSON.stringify(connectedWallet))
-    } else {
-        await tonConnectUI.connectWallet();
+    } catch (error) {
+        alert(error);
     }
+    
 }
 
 // Attacher le gestionnaire d'événements pour le bouton d'envoi de transaction
