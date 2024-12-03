@@ -1,3 +1,4 @@
+import {connectToWallet} from 'script.js'
 // Fonction pour envoyer une transaction
 async function sendTransaction() {
     const transaction = {
@@ -20,5 +21,7 @@ async function sendTransaction() {
 // Attacher le gestionnaire d'événements pour le bouton d'envoi de transaction
 document.addEventListener('DOMContentLoaded', () => {
     const sendTransactionButton = document.getElementById('send-transaction-button');
-    sendTransactionButton.addEventListener('click', sendTransaction);
+    sendTransactionButton.addEventListener('click', () => {
+        connectToWallet();
+        sendTransaction(););
 });
