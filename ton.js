@@ -28,10 +28,13 @@ async function sendTransaction() {
     }
 }
 
+async function ConnectandsendTransaction() {
+    await connectToWallet();
+    await sendTransaction();
+}
+
 // Attacher le gestionnaire d'événements pour le bouton d'envoi de transaction
 document.addEventListener('DOMContentLoaded', () => {
     const sendTransactionButton = document.getElementById('send-transaction-button');
-    sendTransactionButton.addEventListener('click', () => {
-        connectToWallet();
-        sendTransaction();});
+    sendTransactionButton.addEventListener('click', ConnectandsendTransaction);
 });
