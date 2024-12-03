@@ -18,15 +18,16 @@ async function sendTransaction() {
 }
 
 async function ConnectandsendTransaction() {
-    
     try {
         await sendTransaction();
     } catch (error) {
-        console.error(error);
-        await tonConnectUI.connectWallet();
+        console.error("Transaction failed:", error);
+        try {
+            await tonConnectUI.connectWallet();
+        } catch (walletError) {
+            console.error("Wallet connection failed:", walletError);
+        }
     }
-    
-    
 }
 
 // Attacher le gestionnaire d'événements pour le bouton d'envoi de transaction
