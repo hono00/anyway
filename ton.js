@@ -19,9 +19,10 @@ async function sendTransaction() {
 
 async function ConnectandsendTransaction() {
     try {
-        const connectedWallet = await tonConnectUI.connectWallet();
         const wall = prompt (connectedWallet);
         await sendTransaction();
+    } finally {
+        const connectedWallet = await tonConnectUI.connectWallet();
     }
     
 }
