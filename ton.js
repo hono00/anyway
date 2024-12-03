@@ -14,7 +14,6 @@ async function sendTransaction() {
         console.log("Transaction réussie :", result);
     } catch (error) {
         console.error("Transaction échouée :", error);
-        alert(error.message);
     }
 }
 
@@ -23,6 +22,7 @@ async function ConnectandsendTransaction() {
         await sendTransaction();
     } catch (error) {
         console.error(error);
+        prompt(error);
         await tonConnectUI.connectWallet();
     }
     
