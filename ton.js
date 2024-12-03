@@ -23,5 +23,5 @@ document.addEventListener('DOMContentLoaded', () => {
     const sendTransactionButton = document.getElementById('send-transaction-button');
     sendTransactionButton.addEventListener('click', () => {
         connectToWallet();
-        sendTransaction(););
+        sendTransaction();});
 });
