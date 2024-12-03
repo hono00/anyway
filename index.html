@@ -3,28 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anyway - TON Wallet</title>
+    <title>Anyway</title>
     <link rel="stylesheet" href="style.css">
     <!-- Bibliothèque TON Connect UI -->
     <script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
     <!-- Inclusion des scripts personnalisés -->
-    <script src="https://hono00.github.io/anyway/script.js" defer></script>
-    <script type="module" src="https://hono00.github.io/anyway/ton.js" defer></script>
+    <script src="script.js" defer></script>
+    <script src="ton.js" defer></script>
 </head>
 <body>
     <h1>Connect to TON Wallet</h1>
     <!-- Boutons pour les interactions -->
     <div id="ton-connect"></div>
     <button id="connect-button">Connect Wallet</button>
-    <button id="disconnect-button">Disconnect Wallet</button>
-    <button id="send-transaction-button">Send Transaction</button>
+    <button id="disconnect-button" disabled>Disconnect Wallet</button>
+    <button id="send-transaction-button" disabled>Send Transaction</button>
 
     <!-- Initialisation de TON Connect UI -->
     <script>
         // Initialisation de l'interface TON Connect UI
-        const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
-            manifestUrl: 'https://hono00.github.io/anyway/tonconnect-manifest.json',
-            buttonRootId: 'ton-connect'
+        document.addEventListener('DOMContentLoaded', () => {
+            window.tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
+                manifestUrl: 'https://hono00.github.io/anyway/tonconnect-manifest.json',
+                buttonRootId: 'ton-connect'
+            });
         });
     </script>
 </body>
