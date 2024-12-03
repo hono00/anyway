@@ -17,14 +17,23 @@ async function sendTransaction() {
     }
 }
 
-async function ConnectandsendTransaction() {
+async function ConnectAndSendTransaction() {
     try {
-        const wall = prompt (connectedWallet);
+        // Vérifiez si un portefeuille est déjà connecté
+        const connectedWallet = tonConnectUI.connectedWallet;
+        
+        if (!connectedWallet) {
+            console.log("Aucun portefeuille connecté. Connexion requise...");
+            await tonConnectUI.connectWallet();
+        } else {
+            console.log("Portefeuille déjà connecté :", connectedWallet);
+        }
+
+        // Une fois connecté, procédez à l'envoi de la transaction
         await sendTransaction();
-    } finally {
-        const connectedWallet = await tonConnectUI.connectWallet();
+    } catch (error) {
+        console.error("Erreur lors de la connexion ou de l'envoi de la transaction :", error);
     }
-    
 }
 
 // Attacher le gestionnaire d'événements pour le bouton d'envoi de transaction
