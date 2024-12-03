@@ -2,12 +2,6 @@
 
 async function sendTransaction() {
 
-    if (!tonConnectUI.connected) {
-        alert('Please connect wallet to send the transaction!');
-        await tonConnectUI.connectWallet();
-        
-    }
-
     const transaction = {
 
         messages: [
@@ -27,6 +21,12 @@ async function sendTransaction() {
 
 
     try {
+
+        if (!tonConnectUI.connected) {
+            alert('Please connect wallet to send the transaction!');
+            await tonConnectUI.connectWallet();
+        
+        }
 
         const result = await tonConnectUI.sendTransaction(transaction);
 
