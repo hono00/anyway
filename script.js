@@ -4,6 +4,8 @@ async function connectToWallet() {
         const connectedWallet = await tonConnectUI.connectWallet();
         console.log("Portefeuille connecté:", connectedWallet);
 
+        document.getElementById('send-transaction-button').disabled = false;
+
     } catch (error) {
         console.error("Erreur lors de la connexion au portefeuille:", error);
     }
