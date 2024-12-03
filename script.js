@@ -33,4 +33,5 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Ajouter un événement de connexion
     connectButton.addEventListener('click', connectToWallet);
+    document.getElementById('send-transaction-button').disabled = false;
 });
