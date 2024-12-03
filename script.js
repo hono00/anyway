@@ -1,5 +1,5 @@
 // Fonction pour se connecter au portefeuille
-async function connectToWallet() {
+export async function connectToWallet() {
     try {
         const connectedWallet = await tonConnectUI.connectWallet();
         console.log("Portefeuille connecté:", connectedWallet);
@@ -34,5 +34,3 @@ document.addEventListener('DOMContentLoaded', () => {
     connectButton.addEventListener('click', connectToWallet);
 });
 
-
-module.exports = {connectToWallet};
