@@ -1,19 +1,61 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Anyway</title>
+
     <link rel="stylesheet" href="style.css">
-    <!-- Bibliothèque TON Connect -->
-    <script src="https://unpkg.com/@tonconnect/sdk@latest"></script>
+
+    <!-- Bibliothèque TON Connect UI -->
+
     <script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
-    <!-- Inclusion des scripts -->
+
+    <!-- Inclusion des scripts personnalisés -->
+
     <script src="script.js" defer></script>
+
+    <script src="ton.js" defer></script>
+
 </head>
+
 <body>
+
     <h1>Connect to TON Wallet</h1>
+
+    <!-- Boutons pour les interactions -->
+
     <div id="ton-connect"></div>
-    <button id="send-transaction-button">Send Transaction (0.1 TON)</button>
+
+    <button id="send-transaction-button">Send Transaction (0,1TON)</button>
+
+
+
+    <!-- Initialisation de TON Connect UI -->
+
+    <script>
+
+        // Initialisation de l'interface TON Connect UI
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+            window.tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
+
+                manifestUrl: 'https://hono00.github.io/anyway/tonconnect-manifest.json',
+
+                buttonRootId: 'ton-connect'
+
+            });
+
+        });
+
+    </script>
+
 </body>
+
 </html>
