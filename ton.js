@@ -14,7 +14,7 @@ async function sendTransaction() {
         console.log("Transaction réussie :", result);
     } catch (error) {
         console.error("Transaction échouée :", error);
-        prompt(error);
+        const errr = prompt(error);
     }
 }
 
