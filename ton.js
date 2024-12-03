@@ -17,18 +17,8 @@ async function sendTransaction() {
     }
 }
 
-// Attacher les gestionnaires d'événements
+// Attacher le gestionnaire d'événements pour le bouton d'envoi de transaction
 document.addEventListener('DOMContentLoaded', () => {
-    const connectButton = document.getElementById('connect-button');
-    const disconnectButton = document.getElementById('disconnect-button');
     const sendTransactionButton = document.getElementById('send-transaction-button');
-
-    connectButton.addEventListener('click', connectToWallet);
-    disconnectButton.addEventListener('click', disconnectWallet);
     sendTransactionButton.addEventListener('click', sendTransaction);
 });
-
-// Exemple de redirection vers une mini-app Telegram
-tonConnectUI.uiOptions = {
-    twaReturnUrl: 'https://hono00.github.io/anyway/'
-};
