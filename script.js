@@ -4,8 +4,6 @@ async function connectToWallet() {
         const connectedWallet = await tonConnectUI.connectWallet();
         console.log("Portefeuille connecté:", connectedWallet);
 
-        document.getElementById('send-transaction-button').disabled = false;
-
     } catch (error) {
         console.error("Erreur lors de la connexion au portefeuille:", error);
     }
@@ -27,6 +25,7 @@ tonConnectUI.uiOptions = {
     twaReturnUrl: 'https://hono00.github.io/anyway/'
 };
 
+document.getElementById('send-transaction-button').disabled = false;
 // Attacher les gestionnaires d'événements après le chargement du DOM
 document.addEventListener('DOMContentLoaded', () => {
     const connectButton = document.getElementById('ton-connect');
