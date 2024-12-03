@@ -1,25 +1,45 @@
-// Initialisation du connecteur TonConnect
+// Initialisation du connecteur TonConnect (déclaration unique)
 const connector = new TonConnect.TonConnect();
 
-// Initialisation de l'interface utilisateur TON Connect UI
+// Initialisation de l'interface utilisateur
 document.addEventListener('DOMContentLoaded', () => {
-    window.tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
-        manifestUrl: 'https://hono00.github.io/anyway/tonconnect-manifest.json',
-        buttonRootId: 'ton-connect',
-    });
+    if (!window.tonConnectUI) {
+        window.tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
+            manifestUrl: 'https://hono00.github.io/anyway/tonconnect-manifest.json',
+            buttonRootId: 'ton-connect',
+        });
+    }
 
-    // Ajouter les gestionnaires d'événements
     const sendTransactionButton = document.getElementById('send-transaction-button');
-    sendTransactionButton.addEventListener('click', sendTransaction);
+    sendTransactionButton.addEventListener('click', handleTransactionButtonClick);
 });
 
-// Fonction pour se connecter au portefeuille
+// Fonction pour gérer le clic sur le bouton de transaction
+async function handleTransactionButtonClick() {
+    if (!connector.connected) {
+        // Si le portefeuille n'est pas connecté, tenter de le connecter
+        try {
+            console.log("Portefeuille non connecté, tentative de connexion...");
+            await connectToWallet();
+            console.log("Portefeuille connecté avec succès.");
+        } catch (error) {
+            console.error("Impossible de connecter le portefeuille :", error);
+            alert("Erreur lors de la connexion au portefeuille. Veuillez réessayer.");
+            return; // Stopper ici si la connexion échoue
+        }
+    }
+    // Une fois connecté, envoyer la transaction
+    sendTransaction();
+}
+
+// Fonction pour connecter un portefeuille
 async function connectToWallet() {
     try {
         const connectedWallet = await connector.connectWallet();
         console.log("Portefeuille connecté :", connectedWallet);
     } catch (error) {
         console.error("Erreur lors de la connexion au portefeuille :", error);
+        throw error; // Rejeter l'erreur pour la gestion dans `handleTransactionButtonClick`
     }
 }
 
@@ -42,8 +62,6 @@ async function sendTransaction() {
     try {
         const result = await connector.sendTransaction(transaction);
         console.log("Transaction réussie :", result);
-
-        // Optionnel : Récupérer des détails supplémentaires si nécessaire
         alert('Transaction envoyée avec succès. Détails : ' + JSON.stringify(result));
     } catch (error) {
         console.error("Transaction échouée :", error);
