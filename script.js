@@ -1,12 +1,14 @@
 // Fonction pour se connecter au portefeuille
 
 async function connectToWallet() {
+        
 
     try {
+        if (!tonConnectUI.connected) {
 
-        const connectedWallet = await tonConnectUI.connectWallet();
-
-        console.log("Portefeuille connecté:", connectedWallet);
+            const connectedWallet = await tonConnectUI.connectWallet();
+            console.log("Portefeuille connecté:", connectedWallet);
+        }
 
 
 
@@ -25,12 +27,13 @@ async function connectToWallet() {
 async function disconnectWallet() {
 
     try {
+        if (tonConnectUI.connected) {
 
-        await tonConnectUI.disconnect();
+            await tonConnectUI.disconnect();
 
-        console.log("Portefeuille déconnecté");
+            console.log("Portefeuille déconnecté");
 
-
+        }
 
     } catch (error) {
 
