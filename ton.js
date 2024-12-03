@@ -22,7 +22,7 @@ async function ConnectandsendTransaction() {
         await sendTransaction();
     } catch (error) {
         console.error(error);
-        const errr = prompt(error);
+        const errr = prompt("ok:", error);
         await tonConnectUI.connectWallet();
     }
     
